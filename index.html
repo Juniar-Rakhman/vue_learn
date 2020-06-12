@@ -18,7 +18,7 @@
         <button class="btn btn-primary" @click="saveItem" :disabled="newItem.length < 1">Add Task</button>
     </div>
     <ul>
-        <li v-for="item in items" :class="{strikeout: item.done}" >{{ item.label }}</li>
+        <li v-for="item in items" :class="[item.done ? 'strikeout' : '', item.highPriority ? 'priority' : '']" >{{ item.label }}</li>
     </ul>
     <p v-if="items.length === 0">All Done!</p>
 </div>
